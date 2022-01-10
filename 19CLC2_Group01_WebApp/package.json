@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "App.js"
+    "start": "app.js"
   },
   "keywords": [],
   "author": "",
