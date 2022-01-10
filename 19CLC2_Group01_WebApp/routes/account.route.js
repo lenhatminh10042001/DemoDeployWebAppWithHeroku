@@ -19,7 +19,7 @@ router.get('/register', async function(req, res){
 })
 //send email;
 
-router.post('/register', async function(req, res){
+router.post('/register1', async function(req, res){
 
     let newUserID = 0;
     const id_present = await accountModel.countUser();
@@ -147,7 +147,7 @@ router.get('/login', async function(req, res){
     })
 })
 
-router.post('/login', async function(req, res){
+router.post('/login1', async function(req, res){
     const username = req.body.Username
     const password = req.body.Password
 
