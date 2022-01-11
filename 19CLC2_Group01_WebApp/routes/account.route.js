@@ -15,11 +15,11 @@ router.get('/register', async function(req, res){
             }
         }
     }
-    res.render('vWAccount/register')
+    res.render('vwAccount/register')
 })
 //send email;
 
-router.post('/register1', async function(req, res){
+router.post('/register', async function(req, res){
 
     let newUserID = 0;
     const id_present = await accountModel.countUser();
@@ -117,7 +117,7 @@ router.get('/is_available_account', async function(req, res){
 
 //OTP CHECK.
 router.get('/OTP/:email', async function(req, res){
-    res.render('vWAccount/OTPConfirm')
+    res.render('vwAccount/OTPConfirm')
 
 })
 
@@ -147,7 +147,7 @@ router.get('/login', async function(req, res){
     })
 })
 
-router.post('/login1', async function(req, res){
+router.post('/login', async function(req, res){
     const username = req.body.Username
     const password = req.body.Password
 
