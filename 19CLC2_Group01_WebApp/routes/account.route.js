@@ -133,7 +133,7 @@ router.post('/OTP/:email', async function(req, res){
         accountModel.UpdateActivateAccountByUserID(username.UserID)
         return res.redirect('/account/login')
     }else{
-        return res.render('vWAccount/OTPConfirm',{
+        return res.render('vwAccount/OTPConfirm',{
             err_message: 'OTP code does not match'
         })
     }
@@ -142,7 +142,7 @@ router.post('/OTP/:email', async function(req, res){
 
 //login.
 router.get('/login', async function(req, res){
-    res.render('vWAccount/login', {
+    res.render('vwAccount/login', {
         layout:false
     })
 })
@@ -195,7 +195,7 @@ router.get('/profile', auth, async function(req, res){
     const userID = req.session.authUser.UserID
 
     const UserInfo = await accountModel.getUserInfo(userID)
-    res.render('vWAccount/profile',{
+    res.render('vwAccount/profile',{
         UserInfo
     })
 })
@@ -210,7 +210,7 @@ router.get('/changePassword', auth, async function(req, res){
 
     const UserInfo = await accountModel.getUserInfo(userID)
     console.log(UserInfo)
-    res.render('vWAccount/changePassword',{
+    res.render('vwAccount/changePassword',{
         UserInfo
     })
 })
@@ -224,7 +224,7 @@ router.post('/changePassword', auth, async function(req, res){
     const newPass = req.body.newPassword;
     const checkPass = BCrypt.compareSync(oldPass, UserInfo.Password)
     if(checkPass === false){
-        return res.render('vWAccount/changePassword',{
+        return res.render('vwAccount/changePassword',{
             err_message: 'Old password does not match!'
         })
     }
